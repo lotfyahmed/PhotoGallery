@@ -12,14 +12,10 @@ class DetailPhotoViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    var carName: String?
+    var carImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = UIImage(named: carName!)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        imageView.image = carImage
     }
 }

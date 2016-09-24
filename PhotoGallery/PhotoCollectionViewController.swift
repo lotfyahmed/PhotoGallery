@@ -11,9 +11,8 @@ import UIKit
 private let reuseIdentifier = "CarImageCell"
 private let addImageIcon = "addImage"
 
-class PhotoCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PhotoCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
     
-    private let imagePicker = UIImagePickerController()
     private var carsImages:[UIImage?] = [UIImage(named:"car 1"),
                                        UIImage(named:"car 2"),
                                         UIImage(named:"car 3"),
@@ -56,17 +55,46 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
         if indexPath.row == carsImages.count {
-            showImagePicker()
+            chooePhotoSheet()
+        }else{
+            let detailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DetailPhotoViewController") as! DetailPhotoViewController
+            detailsViewController.carImage = carsImages[indexPath.row]
+            self.navigationController?.pushViewController(detailsViewController, animated: true)
         }
     }
+    
+    func chooePhotoSheet()
+    {
+        
+        let actionSheetController: UIAlertController = UIAlertController(title: "Please select Photo", message: "", preferredStyle: .ActionSheet)
+        
+        let cancelActionButton: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+            
+        }
+        actionSheetController.addAction(cancelActionButton)
+        
+        let saveActionButton: UIAlertAction = UIAlertAction(title: "Camera", style: .Default)
+        { action -> Void in
+            print("Take Image by Camera")
+        }
+        actionSheetController.addAction(saveActionButton)
+        
+        let deleteActionButton: UIAlertAction = UIAlertAction(title: "Library", style: .Default)
+        { action -> Void in
+            print("Take Image From Gallery")
+            self.showImagePicker()
+        }
+        actionSheetController.addAction(deleteActionButton)
+        self.presentViewController(actionSheetController, animated: true, completion: nil)
+    }
+    
     
     func showImagePicker(){
         
         guard UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) else{
             return
         }
-            print("Button capture")
-            
+            let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
             imagePicker.allowsEditing = false
