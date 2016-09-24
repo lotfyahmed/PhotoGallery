@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7E0950C5B1E623DD3BEB2B6C4BA84F6965D01D5F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7E0950C5B1E623DD3BEB2B6C4BA84F6965D01D5F" : 0,
+    "6FAEBFBC5CD6FA91DF75E2CB6DECDACEB728CE97" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "41CC958C-5698-496A-BD8A-C27FE8F72CF0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7E0950C5B1E623DD3BEB2B6C4BA84F6965D01D5F" : "PhotoGallery\/",
+    "6FAEBFBC5CD6FA91DF75E2CB6DECDACEB728CE97" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "PhotoGallery",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PhotoGallery.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:lotfyahmed\/MyLocation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6FAEBFBC5CD6FA91DF75E2CB6DECDACEB728CE97"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:lotfyahmed\/PhotoGallery.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7E0950C5B1E623DD3BEB2B6C4BA84F6965D01D5F"
+    }
+  ]
+}
