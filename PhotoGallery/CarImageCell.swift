@@ -11,4 +11,5 @@ import UIKit
 class CarImageCell: UICollectionViewCell {
 
     @IBOutlet weak var carImage: UIImageView!
+    @IBOutlet weak var deleteButton: UIButton!
 }

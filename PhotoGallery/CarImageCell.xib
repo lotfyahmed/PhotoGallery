@@ -14,22 +14,46 @@
                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ac-M2-2MV">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <rect key="frame" x="15" y="15" width="170" height="170"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3j-bk-6gL">
+                        <rect key="frame" x="165" y="0.0" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="Cq0-cK-XgJ"/>
+                            <constraint firstAttribute="width" constant="35" id="z76-Rh-eW0"/>
+                        </constraints>
+                        <state key="normal" image="close"/>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="4ac-M2-2MV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="266-Pd-dex"/>
-                <constraint firstItem="4ac-M2-2MV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KrF-MS-UoE"/>
-                <constraint firstAttribute="bottom" secondItem="4ac-M2-2MV" secondAttribute="bottom" id="t7R-jL-zZG"/>
-                <constraint firstAttribute="trailing" secondItem="4ac-M2-2MV" secondAttribute="trailing" id="yfd-FG-HHA"/>
+                <constraint firstItem="4ac-M2-2MV" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Cag-46-Tju"/>
+                <constraint firstAttribute="bottom" secondItem="4ac-M2-2MV" secondAttribute="bottom" constant="15" id="Ee3-H5-Ihl"/>
+                <constraint firstItem="d3j-bk-6gL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="157" id="I7I-fU-SKK"/>
+                <constraint firstAttribute="trailing" secondItem="d3j-bk-6gL" secondAttribute="trailing" id="Li4-Yd-o0n"/>
+                <constraint firstItem="4ac-M2-2MV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="MBB-PG-NDy"/>
+                <constraint firstItem="4ac-M2-2MV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="Otc-ul-Rez"/>
+                <constraint firstAttribute="trailing" secondItem="4ac-M2-2MV" secondAttribute="trailing" constant="15" id="XDR-W1-JfC"/>
+                <constraint firstItem="d3j-bk-6gL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="e2G-v7-7L8"/>
+                <constraint firstItem="4ac-M2-2MV" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="gCy-0X-uWq"/>
             </constraints>
             <size key="customSize" width="315" height="213"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Cag-46-Tju"/>
+                    <exclude reference="gCy-0X-uWq"/>
+                    <exclude reference="I7I-fU-SKK"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="carImage" destination="4ac-M2-2MV" id="8TT-U5-6aG"/>
+                <outlet property="deleteButton" destination="d3j-bk-6gL" id="fmF-O2-Ytq"/>
             </connections>
             <point key="canvasLocation" x="271" y="386"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="close" width="256" height="256"/>
+    </resources>
 </document>

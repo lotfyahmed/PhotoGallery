@@ -38,11 +38,15 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CarImageCell
+        cell.deleteButton.tag = indexPath.row
         // Configure the cell
         if indexPath.row == carsImages.count {
             cell.carImage.image = UIImage(named:addImageIcon)
+            cell.deleteButton?.hidden = true
         }else{
             cell.carImage.image = carsImages[indexPath.row]
+            cell.deleteButton?.addTarget(self, action: #selector(PhotoCollectionViewController.deleteUser(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            cell.deleteButton?.hidden = false
         }
         return cell
     }
@@ -87,6 +91,11 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
         self.presentViewController(actionSheetController, animated: true, completion: nil)
     }
     
+    func deleteUser(sender:UIButton) {
+        carsImages.removeAtIndex(sender.tag)
+        self.collectionView?.reloadData()
+    }
+    
     enum PhotoSource {
         case Camera
         case Library
@@ -105,7 +114,7 @@ class PhotoCollectionViewController: UICollectionViewController, UIImagePickerCo
             imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         case .Library:
             guard UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) else{
-                 print("There isnot Gallery")
+                print("There isnot Gallery")
                 return
             }
             imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
